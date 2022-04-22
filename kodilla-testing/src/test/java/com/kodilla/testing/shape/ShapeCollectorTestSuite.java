@@ -3,6 +3,7 @@ package com.kodilla.testing.shape;
 import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -33,14 +34,13 @@ public class ShapeCollectorTestSuite {
     @DisplayName("Test add figure")
     @Test
     public void testAddFigure() {
-
         //Given
+        ShapeCollector shapeCollector = new ShapeCollector();
         Square square = new Square(8);
-        ShapeCollector shapeCollector = new ShapeCollector(square);
         //When
         shapeCollector.addFigure(square);
         //Then
-        assertTrue(shapeCollector.showFigures().contains(square));
+        assertTrue(shapeCollector.getFigures().contains(square));
     }
 
 
@@ -49,27 +49,24 @@ public class ShapeCollectorTestSuite {
     @DisplayName("Test remove figure")
     @Test
     public void testRemoveFigure(){
-
         //Given
         Rectangle rectangle = new Rectangle(1, 10);
-        ShapeCollector shapeCollector = new ShapeCollector(rectangle);
+        ShapeCollector shapeCollector = new ShapeCollector();
         shapeCollector.addFigure(rectangle);
         //When
         shapeCollector.removeFigure(rectangle);
 
         //Then
-        assertFalse(shapeCollector.showFigures().contains(rectangle));
-
+        assertFalse(shapeCollector.getFigures().contains(rectangle));
     }
 
 
     @DisplayName("Test get figure")
     @Test
     public void testGetFigure(){
-
         //Given
+        ShapeCollector shapeCollector = new ShapeCollector();
         Rectangle rectangle = new Rectangle(1, 10);
-        ShapeCollector shapeCollector = new ShapeCollector(rectangle);
         shapeCollector.addFigure(rectangle);
 
         //When
@@ -77,21 +74,19 @@ public class ShapeCollectorTestSuite {
 
         //Then
         assertEquals(rectangle, figure);
-
     }
 
 
     @DisplayName("Test showFigures")
     @Test
     public void testShowFigures(){
-
         //Given
+        ShapeCollector shapeCollector = new ShapeCollector();
         Square square = new Square(10);
-        ShapeCollector shapeCollector = new ShapeCollector(square);
         shapeCollector.addFigure(square);
 
         //When
-        ArrayList<Shape> newShape = shapeCollector.showFigures();
+        List<Shape> newShape = shapeCollector.getFigures();
 
         //Then
         assertTrue(newShape.contains(square));
