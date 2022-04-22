@@ -3,17 +3,13 @@ import java.util.*;
 
 public class OddNumbersExterminator {
 
-    public static ArrayList<Integer> exterminate(ArrayList<Integer> numbers) {
-        ArrayList<Integer> odd = new ArrayList<Integer>();
-        if (numbers.isEmpty()) {
-            return numbers;
-        } else {
-            for (Integer no : numbers) {
-                if (no % 2 == 0) {
-                    odd.add(no);
-                }
+    public static List<Integer> exterminate(List<Integer> numbers) {
+        List<Integer> odd = new ArrayList<>();
+        for (Integer no : numbers) {
+            if (no % 2 == 0) {
+                odd.add(no);
             }
-            return odd;
         }
+        return odd;
     }
 }

@@ -23,23 +23,22 @@ public class CollectionTestSuite {
 
     @Test
     public void testOddNumbersExterminatorEmptyList() {
-
-        ArrayList<Integer> emptyList = new ArrayList<Integer>();
-
-        ArrayList<Integer> listNumbers = OddNumbersExterminator.exterminate(emptyList);
-        System.out.println(listNumbers);
-
+        //given
+        List<Integer> emptyList = new ArrayList<>();
+        //when
+        List<Integer> listNumbers = OddNumbersExterminator.exterminate(emptyList);
+        //then
         assertEquals(emptyList, listNumbers);
     }
 
     @Test
     public void testOddNumbersExterminatorNormalList() {
-        ArrayList<Integer> list = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4, 5, 6, 7));
-        ArrayList<Integer> oddList = new ArrayList<>(Arrays.asList(2, 4, 6));
-
-        ArrayList<Integer> listNumbers = OddNumbersExterminator.exterminate(list);
-        System.out.println(listNumbers);
-
-        assertEquals(oddList, listNumbers);
+        //given
+        List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7));
+        //when
+        List<Integer> listNumbers = OddNumbersExterminator.exterminate(list);
+        //then
+        List<Integer> evenList = new ArrayList<>(Arrays.asList(2, 4, 6));
+        assertEquals(evenList, listNumbers);
     }
 }
