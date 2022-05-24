@@ -9,10 +9,10 @@ public class StreamMain {
 
         //PoemBeautifier
         PoemBeautifier poemBeautifier = new PoemBeautifier();
-        poemBeautifier.beautify("dupa", text -> text + "aaa");
-        poemBeautifier.beautify("dupa", String::toUpperCase);
-        poemBeautifier.beautify("dupa", text -> "ABC" + text + "ABC");
-        poemBeautifier.beautify("dupa", text -> text.replace("dupa","abc"));
-
+        poemBeautifier.beautify("abcd", text -> text + "aaa");
+        poemBeautifier.beautify("abcd", text -> text.toUpperCase());
+        poemBeautifier.beautify("abcd", text -> "ABC" + text + "ABC");
+        poemBeautifier.beautify("abcd", text -> text.replace("dupa","abc"));
+        poemBeautifier.beautify("abcd", text -> text.substring(3));
     }
 }
