@@ -111,9 +111,9 @@ class BookDirectoryTestSuite {
         LibraryUser libraryUser = mock(LibraryUser.class);
         List<Book> listOfBooks = generateListOfNBooks(1);
         when(libraryDatabaseMock.listBooksInHandsOf(libraryUser)).thenReturn(listOfBooks);
-
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         //When
-        List<Book> usersBooks = libraryDatabaseMock.listBooksInHandsOf(libraryUser);
+        List<Book> usersBooks = bookLibrary.listBooksInHandsOf(libraryUser);
 
         //Then
         assertEquals(1, usersBooks.size());
@@ -125,9 +125,9 @@ class BookDirectoryTestSuite {
         LibraryUser libraryUser = mock(LibraryUser.class);
         List<Book> listOfBooks = generateListOfNBooks(5);
         when(libraryDatabaseMock.listBooksInHandsOf(libraryUser)).thenReturn(listOfBooks);
-
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         //When
-        List<Book> usersBooks = libraryDatabaseMock.listBooksInHandsOf(libraryUser);
+        List<Book> usersBooks = bookLibrary.listBooksInHandsOf(libraryUser);
 
         //Then
         assertEquals(5, usersBooks.size());
