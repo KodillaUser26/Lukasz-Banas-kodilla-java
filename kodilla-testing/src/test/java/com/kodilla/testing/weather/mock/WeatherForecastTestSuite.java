@@ -54,14 +54,13 @@ class WeatherForecastTestSuite {
 
     @Test
     void testCalculateAverage() {
-
         //Given
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
         when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
         //When
-        Double average = weatherForecast.Average();
+        double average = weatherForecast.average();
         //Then
-        assertEquals(25.56, average);
+        assertEquals(25.56, average, 0.01);
 
     }
 
@@ -73,7 +72,7 @@ class WeatherForecastTestSuite {
         when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
 
         //When
-        Double mediane = weatherForecast.Mediane();
+        Double mediane = weatherForecast.mediane();
 
         //Then
         assertEquals(25.5, mediane);

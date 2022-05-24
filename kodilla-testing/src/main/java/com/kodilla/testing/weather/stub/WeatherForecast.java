@@ -14,28 +14,24 @@ public class WeatherForecast {
 
         for(Map.Entry<String, Double> temperature : temperatures.getTemperatures().entrySet()){
 
-            // adding 1 celsius degree to current value
-            // as a temporary weather forecast
+
             resultMap.put(temperature.getKey(), temperature.getValue() + 1.0);
         }
         return resultMap;
     }
 
-    public Double Average() {
+    public Double average() {
+        double sum = 0.0;
 
-        Double average = 0.0;
-        int total = 0;
-        double value= 0.0;
-
-        for(Map.Entry<String, Double> temperature : temperatures.getTemperatures().entrySet()) {
-            average = average + temperature.getValue();
-            total++;
-            value = average/total;
+        Map<String, Double> temperatures = this.temperatures.getTemperatures();
+        for (Map.Entry<String, Double> temperature : temperatures.entrySet()) {
+            sum = sum + temperature.getValue();
         }
-        return Math.floor(value * 100) / 100;
+
+        return sum / temperatures.entrySet().size();
     }
 
-    public Double Mediane() {
+    public Double mediane() {
 
         Double mediane = 0.0;
         List<Double> theList = new ArrayList<>();
