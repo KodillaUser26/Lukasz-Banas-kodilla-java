@@ -3,4 +3,6 @@ include 'kodilla-testing'
 include 'kodilla-stream'
 include 'kodilla-exception'
 include 'kodilla-good-patterns'
+include 'kodilla-good-patterns:kodilla-spring-intro'
+findProject(':kodilla-good-patterns:kodilla-spring-intro')?.name = 'kodilla-spring-intro'
 
