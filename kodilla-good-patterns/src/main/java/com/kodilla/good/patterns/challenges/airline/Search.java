@@ -9,7 +9,8 @@ public class Search {
 
 
     public void searchTo(Set<Flight> theList, String nameAirPort) {
-        Stream<Flight> flightListTo = theList.stream().filter((l) -> l.getNameAirPortTo().equals(nameAirPort));
+        Stream<Flight> flightListTo = theList.stream()
+                .filter((l) -> l.getNameAirPortTo().equals(nameAirPort));
         PrintStream flightListAll = System.out;
         flightListTo.forEach(flightListAll::println);
     }

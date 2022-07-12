@@ -16,7 +16,6 @@ public class Flight {
         this.nameAirPortFrom = nameAirPortFrom;
         this.nameAirPortTo = nameAirPortTo;
     }
-
     @Override
     public String toString() {
         return "Flight{" +
