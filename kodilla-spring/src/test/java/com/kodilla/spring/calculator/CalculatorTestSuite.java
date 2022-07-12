@@ -3,33 +3,72 @@ package com.kodilla.spring.calculator;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import static org.testng.Assert.assertEquals;
+import org.testng.Assert;
 
 public class CalculatorTestSuite {
+
     @Test
-    public void testCalculations() {
-        // Given
+    public void testCalculatorSum() {
+        //given
+        double a = 4;
+        double b = 2;
+
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
         Calculator calculator = context.getBean(Calculator.class);
-        double d1 = 4;
-        double d2 = 2;
-        double expectedSumResult = 6;
-        double expectedSubResult = 2;
-        double expectedMulResult = 8;
-        double expectedDivResult = 2;
 
+        //when
+        double result = calculator.add(a, b);
 
-        // When
-        double sumResult = calculator.add(d1, d2);
-        double subResult = calculator.sub(d1, d2);
-        double mulResult = calculator.mul(d1, d2);
-        double divResult = calculator.div(d1, d2);
-
-        // Then
-        assertEquals(expectedSumResult, sumResult);
-        assertEquals(expectedSubResult, subResult);
-        assertEquals(expectedMulResult, mulResult);
-        assertEquals(expectedDivResult, divResult);
+        //then
+        Assert.assertEquals(6, result);
     }
+
+    @Test
+    public void testCalculatorMul() {
+        //given
+        double a = 4;
+        double b = 2;
+
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
+        Calculator calculator = context.getBean(Calculator.class);
+
+        //when
+        double result = calculator.mul(a, b);
+
+        //then
+        Assert.assertEquals(8, result);
+    }
+
+    @Test
+    public void testCalculatorDiv() {
+        //given
+        double a = 4;
+        double b = 2;
+
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
+        Calculator calculator = context.getBean(Calculator.class);
+
+        //when
+        double result = calculator.div(a, b);
+
+        //then
+        Assert.assertEquals(2, result);
+    }
+
+    @Test
+    public void testCalculatorSub() {
+        //given
+        double a = 4;
+        double b = 2;
+
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
+        Calculator calculator = context.getBean(Calculator.class);
+
+        //when
+        double result = calculator.sub(a, b);
+
+        //then
+        Assert.assertEquals(2, result);
+    }
+
 }
