@@ -19,6 +19,7 @@ public class BoardTestSuite {
         //When
         board.getToDoList().getTasksList().add("one");
 
+
         //Then
         Assert.assertEquals(1, board.getToDoList().getTasksList().size());
         Assert.assertEquals(0, board.getInProgressList().getTasksList().size());
