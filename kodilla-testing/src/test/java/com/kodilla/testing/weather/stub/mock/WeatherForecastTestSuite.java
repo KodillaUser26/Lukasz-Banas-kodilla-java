@@ -3,6 +3,7 @@ package com.kodilla.testing.weather.stub.mock;                                  
 import com.kodilla.testing.weather.stub.Temperatures;                         // [2]
 import com.kodilla.testing.weather.stub.WeatherForecast;                      // [3]
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.mock;
@@ -10,6 +11,7 @@ import static org.mockito.Mockito.mock;
 
 class WeatherForecastTestSuite {                                              // [7]
 
+    @Disabled
     @Test
         // [8]
     void testCalculateForecastWithMock() {                                     // [9]
